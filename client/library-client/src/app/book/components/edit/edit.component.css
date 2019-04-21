@@ -1,0 +1,40 @@
+#edit_book {
+    margin: 0 15px;
+}
+
+.book-profile {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom:15px;
+}
+
+.reader-books {
+    background-color: #fff;
+    padding: 30px;
+}
+
+.reader-books {
+    padding:30px;
+}
+
+.reader-books-table {
+    max-height: 348px;
+    overflow-y: auto;
+}
+
+.reader-books table {
+    background-color: #fbfbfb;
+}
+
+.reader-books table > tbody > tr:first-child > td {
+    border-top: none!important;
+}
+
+#edit_book_btn {
+    margin-top:20px;
+}
+
+.invalid-feedback {
+    float: right;
+    padding-left: 5px;
+}

@@ -1,0 +1,26 @@
+<div class="sidebar">
+  <div class="user-section">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYm-KcyvHy3PDkmh0V9KzkUk26255h0RwthshiaoanTnfH2B_IRg" />
+    <div class="right text-center pull-right">
+      <div>{{user.firstName}} {{user.lastName}}</div>
+      <div><span class="glyphicon glyphicon-off" (click)="logout()"></span></div>
+    </div>
+  </div>
+  <ul id="menu">
+    <li>
+      <a [routerLink]="['/dashboard/home']">
+        <span class="glyphicon glyphicon-home"></span> Home
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/dashboard/book/list']">
+        <span class="glyphicon glyphicon-book"></span> Books
+      </a>
+    </li>
+    <li>
+      <a [routerLink]="['/dashboard/reader/list']">
+        <span class="glyphicon glyphicon-user"></span> Members
+      </a>
+    </li>
+  </ul>
+</div>

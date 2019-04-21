@@ -1,0 +1,77 @@
+<div id="create_book">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="book-profile">
+        <form [formGroup]="bookForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label>Title</label>
+                <div *ngIf="submitted && form.name.errors" class="invalid-feedback">
+                  <div *ngIf="form.name.errors.required">Required</div>
+                </div>
+                <input type="text" formControlName="name" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && form.name.errors }" placeholder="Title" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <label>Description</label>
+                <div *ngIf="submitted && form.description.errors" class="invalid-feedback">
+                  <div *ngIf="form.description.errors.required">Required</div>
+                </div>
+                <textarea formControlName="description" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && form.description.errors }" placeholder="Description..."
+                  rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="form-group">
+                <label>Author</label>
+                <div *ngIf="submitted && form.author.errors" class="invalid-feedback">
+                  <div *ngIf="form.author.errors.required">Required</div>
+                </div>
+                <input type="text" formControlName="author" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && form.author.errors }" placeholder="Author" />
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="form-group">
+                <label>Year</label>
+                <div *ngIf="submitted && form.year.errors" class="invalid-feedback">
+                  <div *ngIf="form.year.errors.required">Required</div>
+                  <div *ngIf="form.year.errors.min">Minimum is 1</div>
+                </div>
+                <input type="number" formControlName="year" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && form.year.errors }" placeholder="Year" min="1" />
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="form-group">
+                <label>Copies</label>
+                <div *ngIf="submitted && form.count.errors" class="invalid-feedback">
+                  <div *ngIf="form.count.errors.required">Required</div>
+                  <div *ngIf="form.count.errors.min">Minimum is 1</div>
+                </div>
+                <input type="number" formControlName="count" class="form-control"
+                  [ngClass]="{ 'is-invalid': submitted && form.year.errors }" placeholder="Copies" min="1" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <button type="submit" id="create_book_btn" class="btn btn-green pull-right">Create Book <span
+                    class="glyphicon glyphicon-floppy-disk"></span></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

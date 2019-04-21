@@ -1,0 +1,48 @@
+<div id="rent_book">
+  <div class="row">
+    <div class="col-xs-6">
+      <div *ngIf="book" class="book-profile">
+        <h3>{{book.name}}</h3>
+        <small>{{book.author}} <strong>|</strong> {{book.year}} <strong>|</strong>
+          {{book.count - book.rented}}/{{book.count}} copies available</small>
+        <h5>{{book.description}}</h5>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="readers">
+        <div class="row">
+          <div class="col-xs-12">
+            <div class="row">
+              <div class="col-xs-6">
+                <input id="search_readers" [(ngModel)]="searchInput" (input)="onSearchChange($event.target.value)" type="text"
+                  class="form-control" placeholder="Search..." />
+              </div>
+            </div>
+            <hr />
+            <div class="reader-table">
+              <table class="table table-stripped">
+                <thead>
+                  <tr>
+                    <th>Name</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody *ngIf="readers">
+                  <tr *ngFor="let reader of searchResult">
+                    <td>{{reader.firstName}} {{reader.lastName}}</td>
+                    <td>
+                      <button *ngIf="!reader.canRent" (click)="returnBook(reader.uuid)" class="btn btn-sm btn-red"><span
+                          class="glyphicon glyphicon-arrow-down"></span>Return</button>
+                      <button *ngIf="reader.canRent" (click)="rentBook(reader._id)" class="btn btn-sm btn-green"><span
+                          class="glyphicon glyphicon-arrow-up"></span>Rent</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

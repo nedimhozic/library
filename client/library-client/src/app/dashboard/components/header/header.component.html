@@ -1,0 +1,14 @@
+<header>
+  <a [routerLink]="['/dashboard/home']" class="logo-container pull-left">
+    <span class="glyphicon glyphicon-book"></span> Library
+  </a>
+  <div class="pull-left title"><h2 id="header_title"></h2></div>
+  <div class="user-container pull-right">
+    <span class="search">
+      <span class="glyphicon glyphicon-search"></span>
+    </span>
+    <span class="profile">
+      <span>Welcome, {{user.firstName}} {{user.lastName}}</span>
+    </span>
+  </div>
+</header>

@@ -1,0 +1,32 @@
+#rent_book {
+    margin: 0 15px;
+}
+
+.book-profile {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom:15px;
+}
+
+.readers {
+    background-color: #fff;
+    padding: 30px;
+}
+
+.readers-table {
+    max-height: 350px;
+    overflow-y: auto;
+}
+
+.readers-table table {
+    background-color: #fbfbfb;
+}
+
+.readers-table table > tbody > tr:first-child > td {
+    border-top: none!important;
+}
+
+.invalid-feedback {
+    float: right;
+    padding-left: 5px;
+}

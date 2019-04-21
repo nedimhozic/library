@@ -1,0 +1,84 @@
+<div id="create_reader">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="reader-profile">
+        <form [formGroup]="readerForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-xs-6">
+              <div class="form-group">
+                <label>First Name</label>
+                <div *ngIf="submitted && form.firstName.errors" class="invalid-feedback">
+                  <div *ngIf="form.firstName.errors.required">Required</div>
+                </div>
+                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.firstName.errors }"
+                  placeholder="First Name" />
+              </div>
+            </div>
+            <div class="col-xs-6">
+              <div class="form-group">
+                <label>Last Name</label>
+                <div *ngIf="submitted && form.lastName.errors" class="invalid-feedback">
+                  <div *ngIf="form.lastName.errors.required">Required</div>
+                </div>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.lastName.errors }"
+                  placeholder="Last Name" />
+              </div>
+            </div>
+          </div>
+          <div class="row">
+              <div class="col-xs-5">
+                  <div class="form-group">
+                    <label>Email</label>
+                    <div *ngIf="submitted && form.email.errors" class="invalid-feedback">
+                      <div *ngIf="form.email.errors.required">Required</div>
+                      <div *ngIf="form.email.errors.email">Wrong format</div>
+                    </div>
+                    <input type="email" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.email.errors }"
+                      placeholder="Email" />
+                  </div>
+                </div>
+            <div class="col-xs-3">
+              <div class="form-group">
+                <label>Date of Birth</label>
+                <div *ngIf="submitted && form.dateOfBirth.errors" class="invalid-feedback">
+                    <div *ngIf="form.dateOfBirth.errors.required">Required</div>
+                  </div>
+                <input type="text" formControlName="dateOfBirth" class="form-control" [ngClass]="{ 'is-invalid': submitted && form.dateOfBirth.errors }" placeholder="Date of Birth" [owlDateTime]="dt1"
+                  [owlDateTimeTrigger]="dt1" readonly="readonly"/>
+                <owl-date-time #dt1 [pickerType]="'calendar'"></owl-date-time>
+              </div>
+            </div>
+            <div class="col-xs-3">
+              <div class="form-group">
+                <label>Gender</label>
+                <div *ngIf="submitted && form.gender.errors" class="invalid-feedback">
+                    <div *ngIf="form.gender.errors.required">Required</div>
+                  </div>
+                <select class="form-control" formControlName="gender" [ngClass]="{ 'is-invalid': submitted && form.gender.errors }">
+                  <option value="">Gender</option>
+                  <option value="M">Male</option>
+                  <option value="F">Female</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xs-1">
+              <div class="form-group student-cbox">
+                <div class="checkbox">
+                  <label><input type="checkbox" formControlName="isStudent"/> Student</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="form-group">
+                <button type="submit" id="create_reader_btn" class="btn btn-green pull-right">Create Member <span
+                    class="glyphicon glyphicon-floppy-disk"></span></button>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

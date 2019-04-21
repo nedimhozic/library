@@ -1,0 +1,45 @@
+#create_book {
+    margin: 0 15px;
+}
+
+.book-profile {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom:15px;
+}
+
+.book-books {
+    background-color: #fff;
+    padding: 30px;
+}
+
+.student-cbox {
+    margin-top:30px;
+}
+
+.book-books {
+    padding:30px;
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+}
+
+.book-books table {
+    background-color: #fbfbfb;
+}
+
+.book-books table > tbody > tr:first-child > td {
+    border-top: none!important;
+}
+
+#create_book_btn {
+    margin-top:20px;
+}
+
+textarea {
+    resize: none;
+}
+
+.invalid-feedback {
+    float: right;
+    padding-left: 5px;
+}

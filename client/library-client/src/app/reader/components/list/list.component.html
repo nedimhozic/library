@@ -1,0 +1,49 @@
+<div id="readers_list">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-6">
+        <div class="search-input">
+          <span class="glyphicon glyphicon-search"></span>
+          <input id="search_readers" (input)="onSearchChange($event.target.value)" type="text" class="form-control" placeholder="Search..." />
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <button id="add_reader" [routerLink]="['/dashboard/reader/create']" class="btn btn-green pull-right"><span
+            class="glyphicon glyphicon-plus"></span> Add New
+          Member</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 readers-table">
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Date of Birth</th>
+            <th>Student</th>
+            <th>Rented Books</th>
+            <th width="200px">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let reader of searchResult">
+            <td>{{reader.firstName}}</td>
+            <td>{{reader.lastName}}</td>
+            <td>{{reader.email}}</td>
+            <td>{{reader.dateOfBirth | date:'MM/dd/yyy'}}</td>
+            <td><span *ngIf="reader.isStudent" class="glyphicon glyphicon-ok"></span></td>
+            <td><strong>{{reader.rentedBooks | rented}}</strong></td>
+            <td>
+              <button (click)="deleteReader(reader)" class="remove-row btn btn-sm btn-red"><span class="glyphicon glyphicon-remove"></span>
+                Remove</button>
+              <button class="edit-row btn btn-sm btn-blue" [routerLink]="['/dashboard/reader/edit', reader._id]"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

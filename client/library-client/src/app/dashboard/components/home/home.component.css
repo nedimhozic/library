@@ -1,0 +1,90 @@
+.widget-box {
+    border-radius: 2px;
+    overflow: hidden;
+    background: #ffffff;
+    -webkit-box-shadow: 0px 2px 0px 0px #e1e5e6;
+    -moz-box-shadow: 0px 2px 0px 0px #e1e5e6;
+    box-shadow: 0px 2px 0px 0px #e1e5e6;
+}
+
+.widget-box .counter {
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    display: inline-block;
+    font-size: 24px;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.widget-box .text {
+    display: inline-block;
+    max-width: 230px;
+    height: 100px;
+    vertical-align: top;
+    line-height: 100px;
+    padding: 0 0 0 15px;
+}
+
+.widget-box .text div {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+    line-height: normal;
+    font-size: 20px;
+    color: #8e9aa4;
+    font-weight: 300;
+}
+
+.widget-box .text div span {
+    display: block;
+    font-size: 15px;
+}
+
+.widget-box .counter.green {
+    background-color: #a5c562;
+}
+
+.widget-box .counter.red {
+    background-color: #ff503f;
+}
+
+.widget-box .counter.blue {
+    background-color: #91dff3;
+}
+
+.widget-box .counter.yellow {
+    background-color: #FFC312;
+}
+
+.lists {
+    padding-top: 30px;
+}
+
+.lists .header {
+    height: 50px;
+    color: #fff;
+    font-size: 22px;
+    padding: 10px 15px;
+}
+
+.lists .header.blue {
+    background-color: #91dff3;
+}
+.lists .header.yellow {
+    background-color: #FFC312;
+}
+
+.lists .body{
+    background-color: #fff;
+    padding: 15px;
+}
+
+.lists .body table {
+    background-color: #fbfbfb;
+}
+
+.lists .body table > tbody > tr:first-child > td {
+    border-top: none!important;
+}

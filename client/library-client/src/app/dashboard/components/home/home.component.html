@@ -1,0 +1,87 @@
+<div *ngIf="stat" class="row">
+  <div class="col-xs-12">
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="widget-box">
+        <div class="counter green">{{stat.books.count}}</div>
+        <div class="text">
+          <div>
+            <strong>Books</strong>
+            <span>Total amount in Library</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="widget-box">
+        <div class="counter red">{{stat.books.copies}}</div>
+        <div class="text">
+          <div>
+            <strong>Copies</strong>
+            <span>Total amount of copies</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="widget-box">
+        <div class="counter blue">{{stat.readers.count}}</div>
+        <div class="text">
+          <div>
+            <strong>Members</strong>
+            <span>Total amount of members</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-lg-3 col-md-6 col-sm-6">
+      <div class="widget-box">
+        <div class="counter yellow">{{stat.books.rented}}</div>
+        <div class="text">
+          <div>
+            <strong>Rented books</strong>
+            <span>Amount of rented books</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<div *ngIf="stat" class="row lists">
+  <div class="col-xs-12">
+    <div class="col-xs-6">
+      <div class="header blue">
+        Active Readers
+      </div>
+      <div class="body">
+        <table class="table table-stripped">
+            <tr *ngFor="let reader of stat.readers.active">
+              <td><strong>{{reader.firstName}} {{reader.lastName}}</strong></td>
+              <td>{{reader.books}} rented book(s) last year</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="col-xs-6">
+      <div class="header yellow">
+        Most Rented Books
+      </div>
+      <div class="body">
+        <table class="table table-stripped">
+          <tbody>
+            <tr *ngFor="let book of stat.books.mostRented">
+              <td><strong>{{book.name}}</strong></td>
+              <td>{{book.author}}</td>
+              <td>{{book.totalRented}} rental(s) last year</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

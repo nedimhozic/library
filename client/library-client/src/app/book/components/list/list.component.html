@@ -1,0 +1,48 @@
+<div id="books_list">
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="col-xs-6">
+        <div class="search-input">
+          <span class="glyphicon glyphicon-search"></span>
+          <input id="search_books" (input)="onSearchChange($event.target.value)" type="text" class="form-control" placeholder="Search..." />
+        </div>
+      </div>
+      <div class="col-xs-6">
+        <button id="add_book" [routerLink]="['/dashboard/book/create']" class="btn btn-green pull-right"><span
+            class="glyphicon glyphicon-plus"></span> Add New
+          Book</button>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 books-table">
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Description</th>
+            <th>Year</th>
+            <th>Copies</th>
+            <th width="300px">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let book of searchResult">
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td class="desc">{{book.description}}</td>
+            <td>{{book.year}}</td>
+            <td><strong>{{book.count - book.rented}}/{{book.count}}</strong></td>
+            <td>
+              <button (click)="deleteBook(book)" class="remove-row btn btn-sm btn-red"><span class="glyphicon glyphicon-remove"></span>
+                Remove</button>
+              <button class="edit-row btn btn-sm btn-blue" [routerLink]="['/dashboard/book/edit', book._id]"><span class="glyphicon glyphicon-edit"></span> Edit</button>
+              <button class="rent-row btn btn-sm btn-yellow" [routerLink]="['/dashboard/book/rent', book._id]"><span class="glyphicon glyphicon-sort"></span> Rent/Return</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

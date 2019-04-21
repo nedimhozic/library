@@ -1,0 +1,44 @@
+#edit_reader {
+    margin: 0 15px;
+}
+
+.reader-profile {
+    background-color: #fff;
+    padding: 30px;
+    margin-bottom:15px;
+}
+
+.reader-books {
+    background-color: #fff;
+    padding: 30px;
+}
+
+.student-cbox {
+    margin-top:30px;
+}
+
+.reader-books {
+    padding:30px;
+}
+
+.reader-books-table {
+    max-height: 230px;
+    overflow-y: auto;
+}
+
+.reader-books table {
+    background-color: #fbfbfb;
+}
+
+.reader-books table > tbody > tr:first-child > td {
+    border-top: none!important;
+}
+
+#edit_reader_btn {
+    margin-top:20px;
+}
+
+.invalid-feedback {
+    float: right;
+    padding-left: 5px;
+}

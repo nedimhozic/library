@@ -1,0 +1,34 @@
+#readers_list {
+    background-color: white;
+    box-shadow: 0px 2px 0px 0px #e1e5e6;
+    padding: 30px 15px;
+    margin: 0 15px;
+}
+
+.search-input .glyphicon {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+
+.search-input #search_readers {
+    padding-left:35px;
+}
+
+.readers-table {
+    padding:30px;
+    max-height: calc(100vh - 235px);
+    overflow-y: auto;
+}
+
+.readers-table table {
+    background-color: #fbfbfb;
+}
+
+.readers-table table > tbody > tr:first-child > td {
+    border-top: none!important;
+}
+
+.readers-table table .edit-row {
+    margin-left:10px;
+}
